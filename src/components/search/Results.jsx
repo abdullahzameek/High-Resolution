@@ -1,8 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import firebase from '../../firebase';
 import Profile from '../Profile/profileWrapper';
+import "./Results.css";
+
 const db = firebase.firestore();
-let arr = []
+let arr = [];
+
 
 
 
@@ -30,12 +33,14 @@ export default function(){
     )
 
     console.log(users);
-    let show = users.map((user)=><li key={user.displayName}><button name={user.displayName} onClick={setThis}>{user.displayName}</button></li>)
+    let show = users.map((user)=><li key={user.displayName}><button name={user.displayName} onClick={setThis} className = "Result">{user.displayName}</button></li>)
     console.log(selected)
     if (!selected)
         return(
             <div>
-                <input value={cur} onChange={onchange}></input>
+                <input value={cur} onChange={onchange} className = "SearchBar">
+                    
+                </input>
                 {show}
             </div>
         )
@@ -43,7 +48,7 @@ export default function(){
     return (
         <div>
             <div>
-                <input value={cur} onChange={onchange}></input>
+                <input value={cur} onChange={onchange} className = "SearchBar"></input>
                 {show}
             </div>
             <div>
