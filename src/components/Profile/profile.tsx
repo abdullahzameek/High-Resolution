@@ -1,23 +1,24 @@
 import React from 'react';
 import Results from '../search/Results'
+import "./Profile.css";
+import Picture from "./SexKing.png"
 
 
 
 export default function(props: any){
-    console.log('here are props');
-    console.log(props);
+    console.log(props.details.NumberofFollowers)
     return(
         <div>
-            <h1>
-            {props.details.displayName}
-            </h1>
-            <br></br>
-            <h4>
-                Resolutions: {props.details.NumberOfResolutions} &nbsp;&nbsp; Followers: {props.details.NumberofFollowers} 
-            </h4>
-            <br></br>
-            <h4> {props.details.ProfileText}</h4>
-            
+            <img src = {Picture} className = "ProfilePhoto"></img>
+            <div className = "Profile">
+                <h1>
+                <span className = "UserID">{props.details.displayName}</span>
+                </h1>
+                <h4>
+                    Resolutions: <span className = "highlight">{props.details.NumberOfResolutions}</span> &nbsp;&nbsp; Followers: <span className = "highlight">{props.details.NumberofFollowers}</span> 
+                </h4>
+                <h4> {props.details.ProfileText}</h4>
+            </div>
         </div>
     )
 }
