@@ -6,6 +6,7 @@ import { DashboardRoutes } from "./views/Dashboard";
 import Results from "./components/search/Results";
 import MakeResolution from './components/Resolutions/MakeResolution';
 import Resolution from "./components/Resolutions/Resolution";
+import EditProfile from "./components/Profile/EditProfile";
 
 const ApplicationRoutes = () => {
    return (
@@ -14,6 +15,8 @@ const ApplicationRoutes = () => {
          <PrivateRoute exact path="/dashboard" component={DashboardRoutes}/>
          <Route exact path="/search" component={Results}/>
          <Route exact path="/createNew" component={MakeResolution}></Route>
+         <Route exact path='/editUser' component={EditProfile}/>
+           
          <Route path="/auth" component={AuthRoutes} />
          <Redirect to="/auth" from= "/" />
        </Switch>

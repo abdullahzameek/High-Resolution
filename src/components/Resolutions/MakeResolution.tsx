@@ -6,6 +6,7 @@ export default function MakeResolution(){
 
     return(
     <div>
+        <form>
         <div className='reactangle'><p>Name Your Goal</p></div>
         <div className='line'></div>
         <div className='setcontainer'><p className='set'>Set Goal Date: </p><input type="date" id="start" name="trip-start"value="2021-04-03"min="2021-04-01" max="2050-12-31"></input></div>
@@ -21,6 +22,8 @@ export default function MakeResolution(){
         <div className='hashtags'>#randomhashtag</div>
         <div className='line'></div>
         <div className='reactangle2'><p>Start Resolution!</p></div>
+    
+        </form>
     </div>
     );
 
