@@ -1,18 +1,17 @@
-import firebase from "firebase";
+import firebase from "firebase/app";
 
 const config = {
-    apiKey: "AIzaSyDlsLKQFz-8RsAwXC2iKL1jJV3YRv9-MCo",
-    authDomain: "hyung-347d9.firebaseapp.com",
-    databaseURL: "https://hyung-347d9.firebaseio.com",
-    projectId: "hyung-347d9",
-    storageBucket: "hyung-347d9.appspot.com",
-    messagingSenderId: "445518833990",
-    appId: "1:445518833990:web:954967e098dd512d3f9d47"
+    apiKey: "AIzaSyBzgudDNJrruoqplsuth8D-iQUlW1BPFuM",
+    authDomain: "princetonhres-b6632.firebaseapp.com",
+    projectId: "princetonhres-b6632",
+    storageBucket: "princetonhres-b6632.appspot.com",
+    messagingSenderId: "716969035902",
+    appId: "1:716969035902:web:911ef453a177129d32302f",
+    measurementId: "G-XN09BZ3VPE"
 };
 
 
 if (!firebase.apps.length)
     firebase.initializeApp(firebaseConfig);
-    
     
 export default firebase;
