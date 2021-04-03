@@ -13,7 +13,7 @@ function ResCompleted () {
     const displayData = await Ref.get();
     let data = displayData.data();
     const displayName = data.displayName;
-    const ref = db.collection("Profiles").doc(displayName).collection("Unfinished");
+    const ref = db.collection("Profiles").doc(displayName).collection("Finished");
     const unfinished = await ref.get();
     let arr = unfinished.docs.map(doc=>doc.data());
     console.log(arr);
