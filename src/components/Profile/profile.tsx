@@ -6,7 +6,7 @@ import Picture from "./PictureNotAvailable.png"
 
 
 export default function(props: any){
-    console.log(props.details.NumberofFollowers)
+    console.log("This is it:" + props.details.NumberofFollowers)
     return(
         <div className = "ProfileBox">
             <img src = {props.details.picture?props.details.picture:Picture} className = "ProfilePhoto"></img>

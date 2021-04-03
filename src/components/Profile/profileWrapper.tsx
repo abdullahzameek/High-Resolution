@@ -18,7 +18,7 @@ export default function(props: any){
         console.log('this is the details');
         console.log(details.data());
         sessionStorage.setItem('displayN', displayName)
-        setFields(details);
+        setFields(details.data());
     };
 
     const [fields, setFields]: any = useState({});
