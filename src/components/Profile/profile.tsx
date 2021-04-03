@@ -1,7 +1,7 @@
 import React from 'react';
-import Results from '../search/Results'
+import Results from '../search/Results';
 import "./Profile.css";
-import Picture from "./PictureNotAvailable.png"
+import Picture from "./PictureNotAvailable.png";
 
 
 

@@ -1,0 +1,32 @@
+.SearchBar {
+    height: 4%;
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    top: 4%;
+    background: #F2F2F2;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+
+}
+
+li{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    
+    padding-left: 36%;
+    top: 9%;
+    border: slategray;
+    width: 28%;
+    filter: drop-shadow(4px 4px 4px #c4c4c4);
+
+}
+
+.Result {
+    background: #ffffff;
+    padding: 1%;
+    border: none;
+    font-size: large;
+    
+}
