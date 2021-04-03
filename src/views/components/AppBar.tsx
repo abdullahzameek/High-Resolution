@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { BrowserRouter } from 'react-router-dom';
+import { NoEncryptionTwoTone } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -37,9 +38,9 @@ export default function ButtonAppBar() {
           <Typography variant="h4" className={classes.title} >
             High<br></br>Resolution
           </Typography>
-          
-    
-         
+          <div>
+            <a href="/search">Search</a>
+          </div>
         </Toolbar>
       </AppBar>
       </BrowserRouter>

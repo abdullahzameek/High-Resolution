@@ -20,11 +20,12 @@ const useStyles = makeStyles({
     fontSize: 14,
   },
   pos: {
+    float: 'right',
     marginBottom: 12,
   },
 });
 
-export default function CreateResolution() {
+export default function EditProfile() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
 
@@ -37,11 +38,11 @@ export default function CreateResolution() {
     <Card className={classes.root}>
       <CardContent>
         <Typography variant="h5" component="h2">
-          Create Resolution
+          Edit Profile
         </Typography>
       </CardContent>
       <CardActions> 
-        <a href="/createNew" size="small">Click Here</a>
+        <a href="/editUser" size="small">Click Here</a>
       </CardActions>
     </Card>
   );

@@ -17,9 +17,10 @@ export default function(props: any){
                                         .get();
         console.log('this is the details');
         console.log(details.data());
-        setFields(details.data());
+        sessionStorage.setItem('displayN', displayName)
+        setFields(details);
     };
-    
+
     const [fields, setFields]: any = useState({});
 
     useEffect(function(){
