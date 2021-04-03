@@ -8,7 +8,7 @@ import Picture from "./SexKing.png"
 export default function(props: any){
     console.log(props.details.NumberofFollowers)
     return(
-        <div>
+        <div className = "ProfileBox">
             <img src = {Picture} className = "ProfilePhoto"></img>
             <div className = "Profile">
                 <h1>
@@ -16,7 +16,9 @@ export default function(props: any){
                 </h1>
                 <h4>
                     Resolutions: <span className = "highlight">{props.details.NumberOfResolutions}</span> &nbsp;&nbsp; Followers: <span className = "highlight">{props.details.NumberofFollowers}</span> 
+                    {props.details.PreferredName}
                 </h4>
+                
                 <h4> {props.details.ProfileText}</h4>
             </div>
         </div>

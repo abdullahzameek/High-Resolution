@@ -1,13 +1,25 @@
+.ProfileBox{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    left:15%;
+    top: 15%;
+    margin-left: -15%;
+    
+}
+
 .Profile{
     max-width: 30%;
     left: 35%;
     top: 15%;
-    
     color: #7e7e7e;
+    display: flex;
+    flex-direction: column;
 
 }
 .ProfilePhoto{
-    
+    padding:5%;
     width: 15%;
     border-radius: 50%;
     top: 15%;
