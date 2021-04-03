@@ -1,0 +1,27 @@
+.Profile{
+    max-width: 30%;
+    left: 35%;
+    top: 15%;
+    position: absolute;
+    color: #7e7e7e;
+
+}
+.ProfilePhoto{
+    position:absolute;
+    width: 15%;
+    border-radius: 50%;
+    top: 15%;
+    left: 15%;
+    filter: drop-shadow(4px 4px 4px #c4c4c4);
+}
+
+.UserID{
+    color: black;
+}
+/* text{
+    color: #7E7e7e;
+} */
+
+.highlight{
+    color: #5a5a5a;
+}
