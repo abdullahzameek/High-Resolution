@@ -3,6 +3,7 @@ import ResolutionsCard from "./ResolutionCard";
 import { Grid } from "@material-ui/core";
 import resolutionsList from "./resolutionsList";
 
+
 const ResProgress = () => {
   const getResCard = resCardObj => {
     return (
