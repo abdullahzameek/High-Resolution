@@ -1,7 +1,7 @@
 import React from 'react';
 import Results from '../search/Results'
 import "./Profile.css";
-import Picture from "./SexKing.png"
+import Picture from "./PictureNotAvailable.png"
 
 
 
@@ -9,7 +9,7 @@ export default function(props: any){
     console.log(props.details.NumberofFollowers)
     return(
         <div className = "ProfileBox">
-            <img src = {props.details.displayName?props.details.displayName:Picture} className = "ProfilePhoto"></img>
+            <img src = {props.details.picture?props.details.picture:Picture} className = "ProfilePhoto"></img>
             <div className = "Profile">
                 <h1>
                 <span className = "UserID">{props.details.displayName}</span>
