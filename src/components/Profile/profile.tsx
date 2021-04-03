@@ -10,7 +10,6 @@ export default function(props: any){
         <div>
             <h1>
             {props.details.displayName}
-<<<<<<< Updated upstream
             </h1>
             <br></br>
             <h4>
@@ -19,8 +18,6 @@ export default function(props: any){
             <br></br>
             <h4> {props.details.ProfileText}</h4>
             
-=======
->>>>>>> Stashed changes
         </div>
     )
 }
