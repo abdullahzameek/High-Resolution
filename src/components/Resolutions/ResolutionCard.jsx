@@ -10,6 +10,7 @@ import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import { withStyles} from '@material-ui/core';
 import { SettingsBrightnessOutlined } from "@material-ui/icons";
+import { resolveTypeReferenceDirective } from "typescript";
 
 
 const useStyles = makeStyles({
@@ -48,7 +49,7 @@ class ResolutionCard extends Component{
     console.log('clicked here');
     sessionStorage.setItem("cardContent", [this.props.completion, this.props.resContent, this.props.category]);
     sessionStorage.setItem('posts',JSON.stringify(this.props.posts))
-    return <Redirect from="*" to='/see'/>
+    
   }
 
 
