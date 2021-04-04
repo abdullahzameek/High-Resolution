@@ -9,10 +9,24 @@
 .SearchButton{
     height: 80%;
     position: absolute;
-    right: 4%;
+    right: 14%;
     top: 10%;
 }
 
 .NavBar{
     height: 10%;
+}
+
+.EditUserIcon{
+    height: 80%;
+    position: absolute;
+    right: 4%;
+    top: 10%;
+}
+
+.DiscoverIcon{
+    height: 80%;
+    position: absolute;
+    right: 8%;
+    top: 10%;
 }

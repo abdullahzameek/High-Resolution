@@ -11,6 +11,8 @@ import { NoEncryptionTwoTone } from '@material-ui/icons';
 import "./Logo.css";
 import Logo from "./Logo.png";
 import SearchIcon from "./SearchIcon.png";
+import EditUser from "./EditProfile.png";
+import Discover from "./Discover.png";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -43,6 +45,8 @@ export default function ButtonAppBar() {
           <div className = "SearchButton">
             <a href="/search"><img src = {SearchIcon} className = "SearchButton"></img></a>
           </div>
+          <a href = "/editUser"> <img src = {EditUser} className = "EditUserIcon"></img></a>
+          <a href = "/discover"> <img src = {Discover} className = "DiscoverIcon"></img></a>
         </Toolbar>
       </AppBar>
       </BrowserRouter>
