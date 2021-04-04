@@ -8,11 +8,15 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { BrowserRouter } from 'react-router-dom';
 import { NoEncryptionTwoTone } from '@material-ui/icons';
+import "./Logo.css";
+import Logo from "./Logo.png";
+import SearchIcon from "./SearchIcon.png";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     nav:{
-        backgroundColor:"#ffffff"
+        backgroundColor:"#ffffff",
+        height:"8%"
     },
     root: {
       flexGrow: 1,
@@ -35,11 +39,9 @@ export default function ButtonAppBar() {
       <BrowserRouter>
       <AppBar position="static" className={classes.nav} >
         <Toolbar>
-          <Typography variant="h4" className={classes.title} >
-            High<br></br>Resolution
-          </Typography>
-          <div>
-            <a href="/search">Search</a>
+          <a href="/dashboard"><img src = {Logo} className = "Logo"></img></a>
+          <div className = "SearchButton">
+            <a href="/search"><img src = {SearchIcon} className = "SearchButton"></img></a>
           </div>
         </Toolbar>
       </AppBar>
