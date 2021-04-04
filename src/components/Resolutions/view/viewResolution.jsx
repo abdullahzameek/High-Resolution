@@ -8,7 +8,7 @@ export default function (){
 
     async function postValid(posts){
         let newPosts = []
-        console.log();
+        console.log(posts);
         
         for (let i=0; i < posts.length;i++){
             let image = await firebase.storage().ref().child(sessionStorage.getItem('author')).child(posts[i].img).getDownloadURL();

@@ -68,9 +68,11 @@ class ResolutionCard extends Component{
     if (this.state.card_clicked) {
 			return (<Redirect to={`/see`} />)
     }
-    // if (this.make_post_clicked){
-    //   return (<Redirect to={`/post`}/>)
-    // }
+    if (this.make_post_clicked){
+      console.log("TEST")
+      return (<Redirect to={`/post`}/>)
+    }
+    if (this.props.author == sessionStorage.getItem('displayName'))
     return (
         <Card className={classes.root} variant="outlined">
         <CardContent>
@@ -93,6 +95,25 @@ class ResolutionCard extends Component{
         </CardActions>
         </CardActionArea>
 
+
+      </Card>
+    )
+    else
+    return(
+      <Card className={classes.root} variant="outlined">
+        <CardContent>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            {this.props.completion} Complete
+          </Typography>
+          <Typography variant="h5" component="h2">
+            {this.props.resContent}
+          </Typography>
+        </CardContent>
+        <CardActionArea onClick={this.handleClick}>
+        <CardActions>
+          <Button size="small">View Resolution</Button>
+        </CardActions>
+        </CardActionArea>
 
       </Card>
     )
