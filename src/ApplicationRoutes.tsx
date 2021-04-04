@@ -10,6 +10,7 @@ import Resolution from "./components/Resolutions/Resolution";
 import EditProfile from "./components/Profile/EditProfile";
 
 import DiscoverWrapper from "./components/discover/DiscoverWrapper";
+import MakePost from "./components/posts/makePost";
 
 const ApplicationRoutes = () => {
    return (
@@ -20,6 +21,8 @@ const ApplicationRoutes = () => {
          <Route exact path="/createNew" component={MakeResolution}></Route>
          <Route exact path='/editUser' component={EditProfile}/>
          <Route exact path="/discover" component={DiscoverWrapper}/>
+         <Route exact path="/post" component={MakePost}></Route>
+         
          <Route path="/auth" component={AuthRoutes} />
          <Redirect to="/auth" from= "/" />
        </Switch>
