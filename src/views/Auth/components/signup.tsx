@@ -27,7 +27,16 @@ const SignUp = () => {
     const handleClick = () => {
        history.push("/auth/login")
    }   
-   
+   async function getDisplay(email:any){
+
+      const db = firebase.firestore();
+      const uid = firebase.auth().currentUser?.uid;
+      const ref = db.collection("Users").doc(uid);
+      const unparsed = await ref.get();
+      const displayName = unparsed.data()?.displayName;
+      console.log(displayName);
+      sessionStorage.setItem('displayName',displayName);  
+     }
    const handleChange = (event: any) => {
       event.persist();
       setValues(values => ({
@@ -60,7 +69,7 @@ const SignUp = () => {
          displayName: values.displayName,
          bio: "No bio yet.",
       });
-
+      getDisplay(values.email);
       history.push("/dashboard");
       
     
