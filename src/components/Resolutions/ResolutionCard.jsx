@@ -36,6 +36,7 @@ class ResolutionCard extends Component{
     //console.log(this.props)
     this.state = {
       card_clicked : false,
+      make_post_clicked: false
     }
 
 
@@ -55,12 +56,21 @@ class ResolutionCard extends Component{
     
   }
 
+  handlePostClick = () => {
+    this.setState({
+      make_post_clicked : true 
+    })
+  }
+
 
   render(){
     const { classes } = this.props
     if (this.state.card_clicked) {
 			return (<Redirect to={`/see`} />)
     }
+    // if (this.make_post_clicked){
+    //   return (<Redirect to={`/post`}/>)
+    // }
     return (
         <Card className={classes.root} variant="outlined">
         <CardContent>
@@ -76,6 +86,14 @@ class ResolutionCard extends Component{
           <Button size="small">View Resolution</Button>
         </CardActions>
         </CardActionArea>
+
+        <CardActionArea onClick={this.handlePostClick}>
+        <CardActions>
+          <Button size="small">Make Post</Button>
+        </CardActions>
+        </CardActionArea>
+
+
       </Card>
     )
   }
