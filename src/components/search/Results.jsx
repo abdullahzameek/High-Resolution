@@ -18,8 +18,8 @@ export default function(){
         arr = ref.docs.map(doc=>doc.data());
     }
     function setThis(e){
-        console.log(e.target.name)
-        setSelected(e.target.name)
+        setSelected(<Profile displayName={e.target.name}></Profile>)
+        console.log(selected);
     }
 
     function onchange(e){
@@ -45,6 +45,11 @@ export default function(){
             </div>
         )
     console.log(selected);
+    let profile = (
+            <div>
+                
+            </div>
+    )
     return (
         <div>
             <div>
@@ -52,7 +57,8 @@ export default function(){
                 {show}
             </div>
             <div>
-                <Profile displayName={selected}></Profile>
+
+            {selected}
             </div>
         </div>
     )

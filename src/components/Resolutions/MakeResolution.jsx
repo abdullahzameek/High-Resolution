@@ -11,7 +11,7 @@ export default function MakeResolution(){
    
     async function sendsome(toSend){
         const db = firebase.firestore();
-        db.collection("Profiles").doc(displayN).collection("Unfinished").doc().set(toSend)
+        db.collection("Profiles").doc(displayN).collection("Unfinished").doc().set({...toSend, posts:[]})
     }
      
 

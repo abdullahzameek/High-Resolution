@@ -21,14 +21,8 @@ export default function EditProfile(){
 
     async function sennd(){
         const db = firebase.firestore();
-        const Ref = await db.collection("Users")
-                             .doc(firebase.auth().currentUser?.uid).get();
-
-        const data = await Ref.data();
-        const displayName = data.displayName;
-        db.collection("Profiles").doc(displayName).set({
-            ...fields
-        })
+        const displayName = sessionStorage.getItem('displayName');
+        db.collection("Profiles").doc(displayName).set(fields, {merge:true})
     }
 
     const handleSubmit = (event) => {
