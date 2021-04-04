@@ -8,18 +8,19 @@ export default function (){
 
     async function postValid(posts){
         let newPosts = []
-        posts.foreach(
-            async (post) => {
-                let image = await firebase.storage().child(displayName).child(post.img).getDownloadURL();
+        console.log(posts);
+        
+        for (let i=0; i < posts.length;i++){
+            let image = await firebase.storage().ref().child(displayName).child(posts[i].img).getDownloadURL();
                 let newPost = (
                     <div>
-                        {post.ost}
+                        {posts[i].post}
                         <img src={image}></img>
                     </div>
                 )
                 newPosts.push(newPost);
-            }
-        )
+        }
+            
         setPosts([...newPosts]);
     }
     useEffect(
