@@ -7,6 +7,8 @@ import Discover from './Discover';
 export default function(){
     return (
         <>
+        <br></br>
+        <br></br>
         <Grid container direction="column">
         <Grid item container justify="center" alignItems="center">
           <Grid item xs={false} sm={2} />
