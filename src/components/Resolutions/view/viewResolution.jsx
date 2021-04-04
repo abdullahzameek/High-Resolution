@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import firebase from '../../../firebase';
+import './viewResolution.css';
 
 
 export default function (){
@@ -15,10 +16,14 @@ export default function (){
                 let newPost = (
                     <div>
                         <div className = "PostBox">
-                        <p>{posts[i].post}</p>
-                        </div>
+                        <p className="PostContent">
+                            {posts[i].timestamp}
+                            <br></br>
+                            <br></br>
+                            {posts[i].post}</p>
                         <img src={image} className = "PostImage"></img>
-                        {posts[i].timestamp}
+                        </div>
+                        
                     </div>
                 )
                 newPosts.push(newPost);

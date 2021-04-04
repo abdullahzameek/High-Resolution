@@ -1,0 +1,28 @@
+.PostBox{
+    display: flex;
+    position: absolute;
+    left: 15%;
+    top: 20%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+    height: 30%;
+}
+
+.PostImage{
+    height: 100%;
+    width: auto;
+    right: 50%;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.PostContent{
+    height: 100%;
+    width: auto;
+    left:50%;
+    background: #FCFCFC;
+    box-shadow: 4px 0px 4px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 0px 10px 10px 0px;
+}
