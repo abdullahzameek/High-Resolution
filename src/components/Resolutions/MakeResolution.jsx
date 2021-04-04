@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from "react";
 import firebase from '../../firebase';
 import {useHistory} from 'react-router-dom';
+import axios from 'axios';
+import { couldStartTrivia } from "typescript";
 
 const db = firebase.firestore();
 export default function MakeResolution(){
@@ -17,7 +19,31 @@ export default function MakeResolution(){
 
     const onsubmit = (e)=>{
 
-        alert('hi')
+        async function getWatson(textContent){
+
+            let payload = {
+                "text": textContent
+            }
+            let emotion = await axios.post(`https://ibm-watson-princeton.herokuapp.com/getEmotion`, payload)
+            console.log('this is emotion');
+            console.log(emotion.data);
+            if (emotion.data['sadness'] > 0.5){
+                alert('Hey! We noticed that you might be feeling a bit down. Maybe consider seeking some profession help. Links here')
+            }
+            if(emotion.data['anger'] > 0.5){
+                alert('Hey! We noticed that your comment might have hurtful content. We want everyone at High Resolution to feel safe and not threatened')
+            }
+            if(emotion.data['fear'] > 0.5){
+                alert("Hey! Is everything alright? We're always looking out for our members")
+            }
+
+            let sentiment = await axios.post(`https://ibm-watson-princeton.herokuapp.com/getSentiment`, payload)
+            if(sentiment.data['score'] < -0.5){
+                alert('Hey! We want our members to be able to freely express themselves, but maybe you might want to consider reaching out to someone in person?')
+            }
+
+        }
+        getWatson(e.target.resContent.value)
         e?.preventDefault();
         const things = {
             resContent: e.target.resContent.value,
