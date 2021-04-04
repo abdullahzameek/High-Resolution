@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import ResolutionsCard from "./ResolutionCard";
 import { Grid } from "@material-ui/core";
-import resolutionsList from "./resolutionsList";
 import firebase from '../../firebase';
 
 const db = firebase.firestore();
@@ -40,7 +39,8 @@ function ResProgress () {
       </Grid>
     );
   };
-
+  console.log(cards)
+  console.log(typeof(cards))
   return (
     <Grid container spacing={8}>
       {cards.map(resCardObj=> getResCard(resCardObj))}

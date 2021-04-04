@@ -6,6 +6,7 @@ import Profile from '../../../components/Profile/profileWrapper';
 import Resolution from '../../../components/Resolutions/Resolution'
 import CreateResolution from './CreateResolution';
 import EditProfile from './EditProfile'
+import DiscoverWrapper from "../../../components/discover/DiscoverWrapper";
 
 const Dashboard = () => {
    const [display, setDisplay] = useState("");
@@ -40,6 +41,7 @@ const Dashboard = () => {
             <CreateResolution></CreateResolution>
             <EditProfile></EditProfile>
             <Resolution></Resolution>
+            <DiscoverWrapper></DiscoverWrapper>
             <button onClick={handleClick}>Logout</button>
          </div>
       )
