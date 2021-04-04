@@ -5,6 +5,7 @@ import "firebase/firestore";
 import Profile from '../../../components/Profile/profileWrapper';
 import Resolution from '../../../components/Resolutions/Resolution'
 import CreateResolution from './CreateResolution';
+import SetGoal from './SetGoal.png';
 
 const Dashboard = () => {
    const [display, setDisplay] = useState("");
@@ -36,7 +37,7 @@ const Dashboard = () => {
       return(
          <div>
             <Profile displayName={display}></Profile>
-            <CreateResolution></CreateResolution>
+            <a href="/createNew" ><img src = {SetGoal} className = "SetGoalIcon"></img></a>
             <Resolution></Resolution>
             <button onClick={handleClick}>Logout</button>
          </div>
