@@ -6,37 +6,20 @@ const db = firebase.firestore();
 export default function MakeResolution(){
     const history = useHistory();
 
-    const [user,setUser]:any = useState(null);
-    useEffect(
-        function(){
-        whatever()
-    
-        }, []
-    )
-    async function whatever(){
+    const displayN = sessionStorage.getItem('displayName')
+    console.log(displayN);  
+   
+    async function sendsome(toSend){
         const db = firebase.firestore();
-        const Ref =  db.collection("Users")
-                        .doc(firebase.auth().currentUser?.uid);
-        Ref.get().then(
-            (res)=>{
-                const data: any = res.data();
-                const displayName: string = data.displayName;
-                setUser(displayName);
-
-            }
-        );
-    }
-    async function sendsome(toSend:any){
-        const db = firebase.firestore();
-        db.collection("Profiles").doc(user).collection("Unfinished").doc().set(toSend)
+        db.collection("Profiles").doc(displayN).collection("Unfinished").doc().set(toSend)
     }
      
 
-    const onsubmit = (e: any)=>{
+    const onsubmit = (e)=>{
         e?.preventDefault();
         const things = {
             resContent: e.target.resContent.value,
-            author: user,
+            author: displayN,
             completion: "0%",
             category: e.target.category.value
         };
