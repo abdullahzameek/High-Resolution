@@ -18,7 +18,7 @@ const ApplicationRoutes = () => {
         <Route exact path="/createNew" component={MakeResolution}></Route>
         <Route exact path='/editUser' component={EditProfile}/>
         <Route exact path='/discover' component={Discover}/>
-      
+        
         <Route path="/auth" component={AuthRoutes} />
         <Redirect to="/auth" from= "/" />
        </Switch>

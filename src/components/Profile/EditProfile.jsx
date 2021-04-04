@@ -1,13 +1,13 @@
 
 import React, {useState} from 'react';
 import firebase from '../../firebase';
-
+import {useHistory} from 'react-router-dom';
 
 
 
 
 export default function EditProfile(){
-   
+    const history = useHistory();
   
     const [fields, setFields] = useState({})
 
@@ -26,13 +26,14 @@ export default function EditProfile(){
 
         const data = await Ref.data();
         const displayName = data.displayName;
-        await db.collection("Profiles").doc(displayName).set({
+        db.collection("Profiles").doc(displayName).set({
             ...fields
         })
     }
 
     const handleSubmit = (event) => {
         sennd()
+        history.push('/dashboard');
     }
 
     
