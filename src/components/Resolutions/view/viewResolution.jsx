@@ -16,6 +16,7 @@ export default function (){
                     <div>
                         {posts[i].post}
                         <img src={image}></img>
+                        {posts[i].timestamp}
                     </div>
                 )
                 newPosts.push(newPost);

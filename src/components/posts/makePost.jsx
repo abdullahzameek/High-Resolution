@@ -12,13 +12,14 @@ export default function MakePost(){
         const displayName = sessionStorage.getItem('displayName')
         const imgref = storage.child(displayName).child(e.target.file.value);
         imgref.put(e.target.file.files[0]);
-        
+        const date = Date();
         const resRef = db.collection("Profiles").doc("sexking").collection("Unfinished").doc("53rnAOFd5m1519RxHYcF");
         const res = await resRef.update(
             {
                 posts: firebase.firestore.FieldValue.arrayUnion({
                     img: e.target.file.value,
-                    post: e.target.content.value
+                    post: e.target.content.value,
+                    timestamp: date
                 })
             }
         )
