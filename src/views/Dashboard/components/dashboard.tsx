@@ -5,8 +5,6 @@ import "firebase/firestore";
 import Profile from '../../../components/Profile/profileWrapper';
 import Resolution from '../../../components/Resolutions/Resolution'
 import CreateResolution from './CreateResolution';
-import EditProfile from './EditProfile'
-import GoDiscover from './GoDiscover'
 
 const Dashboard = () => {
    const [display, setDisplay] = useState("");
@@ -39,8 +37,6 @@ const Dashboard = () => {
          <div>
             <Profile displayName={display}></Profile>
             <CreateResolution></CreateResolution>
-            <EditProfile></EditProfile>
-            <GoDiscover></GoDiscover>
             <Resolution></Resolution>
             <button onClick={handleClick}>Logout</button>
          </div>
