@@ -50,7 +50,7 @@ class ResolutionCard extends Component{
       card_clicked : true 
     })
     console.log('clicked here');
-    sessionStorage.setItem("cardContent", [this.props.completion, this.props.resContent, this.props.category]);
+    sessionStorage.setItem("author", this.props.author);
     sessionStorage.setItem('posts',JSON.stringify(this.props.posts))
     
   }
