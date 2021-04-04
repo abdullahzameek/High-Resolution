@@ -11,6 +11,7 @@ import Button from '@material-ui/core/Button';
 import { withStyles} from '@material-ui/core';
 import { SettingsBrightnessOutlined } from "@material-ui/icons";
 
+
 const useStyles = makeStyles({
     root: {
       minWidth: 275,
@@ -47,7 +48,7 @@ class ResolutionCard extends Component{
     console.log('clicked here');
     sessionStorage.setItem("cardContent", [this.props.completion, this.props.resContent, this.props.category]);
     sessionStorage.setItem('posts',JSON.stringify(this.props.posts))
-    console.log(JSON.parse(sessionStorage.getItem('posts')))
+    return <Redirect from="*" to='/see'/>
   }
 
 

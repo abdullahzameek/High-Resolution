@@ -11,6 +11,7 @@ import EditProfile from "./components/Profile/EditProfile";
 
 import DiscoverWrapper from "./components/discover/DiscoverWrapper";
 import MakePost from "./components/posts/makePost";
+import viewResolution from "./components/Resolutions/view/viewResolution";
 
 const ApplicationRoutes = () => {
    return (
@@ -22,7 +23,7 @@ const ApplicationRoutes = () => {
          <Route exact path='/editUser' component={EditProfile}/>
          <Route exact path="/discover" component={DiscoverWrapper}/>
          <Route exact path="/post" component={MakePost}></Route>
-         
+         <Route exact path="/see" component={viewResolution}></Route>
          <Route path="/auth" component={AuthRoutes} />
          <Redirect to="/auth" from= "/" />
        </Switch>

@@ -2,14 +2,14 @@ import React, {useEffect, useState} from 'react';
 import firebase from '../../../firebase';
 
 
-export default function viewResolution(){
+export default function (){
     const [postss, setPosts] = useState(null);
     const displayName = sessionStorage.getItem('displayName');
 
     async function postValid(posts){
         let newPosts = []
         posts.foreach(
-            (post) => {
+            async (post) => {
                 let image = await firebase.storage().child(displayName).child(post.img).getDownloadURL();
                 let newPost = (
                     <div>
@@ -24,8 +24,8 @@ export default function viewResolution(){
     }
     useEffect(
         function(){
-
-            postValid()
+            console.log(sessionStorage.getItem('posts'));
+            postValid(JSON.parse(sessionStorage.getItem('posts')))
         }, []
     )
     return (
