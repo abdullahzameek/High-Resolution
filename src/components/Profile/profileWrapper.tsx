@@ -23,8 +23,7 @@ export default function(props: any){
     useEffect(function(){
         const displayName: string = props.displayName;
         getUserData(displayName);
-    }, []);
-    sessionStorage.setItem('displayName',props.displayName);    
+    }, []);  
     if (fields != {})
         return(
             <div>
