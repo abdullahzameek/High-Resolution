@@ -17,10 +17,14 @@ export default function MakeResolution(){
         const db = firebase.firestore();
         const Ref =  db.collection("Users")
                         .doc(firebase.auth().currentUser?.uid);
-        const reserver = await Ref.get();
-        const data: any = reserver.data();
-        const displayName: string = data.displayName;
-        setUser(displayName);
+        Ref.get().then(
+            (res)=>{
+                const data: any = res.data();
+                const displayName: string = data.displayName;
+                setUser(displayName);
+
+            }
+        );
     }
     async function sendsome(toSend:any){
         const db = firebase.firestore();
