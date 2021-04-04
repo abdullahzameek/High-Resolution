@@ -46,6 +46,9 @@ class ResolutionCard extends Component{
   }
 
   handleClick = () => {
+    this.setState({
+      card_clicked : true 
+    })
     console.log('clicked here');
     sessionStorage.setItem("cardContent", [this.props.completion, this.props.resContent, this.props.category]);
     sessionStorage.setItem('posts',JSON.stringify(this.props.posts))
@@ -55,9 +58,9 @@ class ResolutionCard extends Component{
 
   render(){
     const { classes } = this.props
-    // if (this.state.card_clicked) {
-		// 	return (<Redirect to={`/majors/${this.props.Code}`} />)
-    // }
+    if (this.state.card_clicked) {
+			return (<Redirect to={`/see`} />)
+    }
     return (
         <Card className={classes.root} variant="outlined">
         <CardContent>

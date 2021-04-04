@@ -16,6 +16,8 @@ export default function MakeResolution(){
      
 
     const onsubmit = (e)=>{
+
+        alert('hi')
         e?.preventDefault();
         const things = {
             resContent: e.target.resContent.value,
