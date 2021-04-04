@@ -15,24 +15,14 @@ const ApplicationRoutes = () => {
    return (
      <Router>
         <Switch>
-<<<<<<< HEAD
         <PrivateRoute exact path="/dashboard" component={DashboardRoutes}/>
         <Route exact path="/search" component={Results}/>
         <Route exact path="/createNew" component={MakeResolution}></Route>
         <Route exact path='/editUser' component={EditProfile}/>
-        <Route exact path='/discover' component={Discover}/>
+        <Route exact path='/discover' component={DiscoverWrapper}/>
         
         <Route path="/auth" component={AuthRoutes} />
         <Redirect to="/auth" from= "/" />
-=======
-         <PrivateRoute exact path="/dashboard" component={DashboardRoutes}/>
-         <Route exact path="/search" component={Results}/>
-         <Route exact path="/createNew" component={MakeResolution}></Route>
-         <Route exact path='/editUser' component={EditProfile}/>
-         <Route exact path="/discover" component={DiscoverWrapper}/>
-         <Route path="/auth" component={AuthRoutes} />
-         <Redirect to="/auth" from= "/" />
->>>>>>> 35295387db2eb030170627e7da84f743190f47fd
        </Switch>
        </Router>
   );
