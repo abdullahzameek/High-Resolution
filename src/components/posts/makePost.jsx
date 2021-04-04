@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import firebase from '../../firebase';
+import {useHistory} from 'react-router-dom';
+
 
 const db = firebase.firestore();
 const storage = firebase.storage().ref();
 export default function MakePost(){
-
+    const history = useHistory();
     async function onsubmit(e){
         e?.preventDefault();
 
@@ -24,8 +26,7 @@ export default function MakePost(){
                 })
             }
         )
-        console.log(e.target.file.value);
-        console.log(e.target.file.files[0]);
+        history.push("/dashboard")
     }
 
 
