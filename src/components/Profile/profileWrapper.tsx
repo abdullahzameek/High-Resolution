@@ -2,7 +2,6 @@ import React, {useEffect, useState} from 'react';
 import firebase from '../../firebase';
 import Profile from './profile';
 const db: any = firebase.firestore();
-
 export interface fields {
     profilePic: string,
     displayName: string,
@@ -15,12 +14,10 @@ export default function(props: any){
         const details: any = await db.collection("Profiles")
                                         .doc(displayName)
                                         .get();
-        console.log('this is the details');
-        console.log(details.data());
-        sessionStorage.setItem('displayN', displayName)
+        
         setFields(details.data());
     };
-
+    
     const [fields, setFields]: any = useState({});
 
     useEffect(function(){
