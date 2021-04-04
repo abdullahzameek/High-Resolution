@@ -14,9 +14,8 @@ export default function(props: any){
         const details: any = await db.collection("Profiles")
                                         .doc(displayName)
                                         .get();
-        const picture = await firebase.storage().ref().child(displayName).getDownloadURL()
-        .catch((err)=>err);
-        setFields({...details.data(), picture});
+        
+        setFields(details.data());
     };
     
     const [fields, setFields]: any = useState({});

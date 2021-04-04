@@ -13,7 +13,7 @@ export default function MakeResolution(){
    
     async function sendsome(toSend){
         const db = firebase.firestore();
-        await db.collection("Profiles").doc(displayN).collection("Unfinished").doc(toSend.resContent).set({...toSend, posts:[]})
+        db.collection("Profiles").doc(displayN).collection("Unfinished").doc(toSend.resContent).set({...toSend, posts:[]})
     }
      
 
@@ -52,7 +52,6 @@ export default function MakeResolution(){
             category: e.target.category.value
         };
         sendsome(things);
-        console.log(things)
         history.push('/dashboard');
     }
 
