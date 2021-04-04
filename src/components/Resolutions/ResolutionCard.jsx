@@ -36,6 +36,7 @@ class ResolutionCard extends Component{
     //console.log(this.props)
     this.state = {
       card_clicked : false,
+      make_post_clicked: false
     }
 
 
@@ -55,12 +56,24 @@ class ResolutionCard extends Component{
     
   }
 
+  handlePostClick = () => {
+    
+    this.setState({
+      make_post_clicked : true 
+    })
+  }
+
 
   render(){
     const { classes } = this.props
     if (this.state.card_clicked) {
 			return (<Redirect to={`/see`} />)
     }
+    if (this.state.make_post_clicked){
+      sessionStorage.setItem("makeFor", this.props.resContent);
+      return (<Redirect to={`/post`}/>)
+    }
+    if (this.props.author == sessionStorage.getItem('displayName'))
     return (
         <Card className={classes.root} variant="outlined">
         <CardContent>
@@ -76,6 +89,32 @@ class ResolutionCard extends Component{
           <Button size="small">View Resolution</Button>
         </CardActions>
         </CardActionArea>
+
+        <CardActionArea onClick={this.handlePostClick}>
+        <CardActions>
+          <Button size="small">Make Post</Button>
+        </CardActions>
+        </CardActionArea>
+
+
+      </Card>
+    )
+    return(
+      <Card className={classes.root} variant="outlined">
+        <CardContent>
+          <Typography className={classes.title} color="textSecondary" gutterBottom>
+            {this.props.completion} Complete
+          </Typography>
+          <Typography variant="h5" component="h2">
+            {this.props.resContent}
+          </Typography>
+        </CardContent>
+        <CardActionArea onClick={this.handleClick}>
+        <CardActions>
+          <Button size="small">View Resolution</Button>
+        </CardActions>
+        </CardActionArea>
+
       </Card>
     )
   }
