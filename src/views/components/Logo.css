@@ -1,5 +1,5 @@
 .Logo{
-    width: 13%;
+    height: 90%;
     position: absolute;
     left: 4%;
     top: 5%;
@@ -7,8 +7,12 @@
 }
 
 .SearchButton{
-    width: 30%;
+    height: 80%;
     position: absolute;
     right: 4%;
-    top: 20%;
+    top: 10%;
+}
+
+.NavBar{
+    height: 10%;
 }
