@@ -6,6 +6,7 @@ import Profile from '../../../components/Profile/profileWrapper';
 import Resolution from '../../../components/Resolutions/Resolution'
 import CreateResolution from './CreateResolution';
 import SetGoal from './SetGoal.png';
+import Logout from './Logout.png';
 
 const Dashboard = () => {
    const [display, setDisplay] = useState("");
@@ -39,7 +40,7 @@ const Dashboard = () => {
             <Profile displayName={display}></Profile>
             <a href="/createNew" ><img src = {SetGoal} className = "SetGoalIcon"></img></a>
             <Resolution></Resolution>
-            <button onClick={handleClick}>Logout</button>
+            <button onClick={handleClick} className = "Logout"><img src = {Logout}></img></button>
          </div>
       )
     return (

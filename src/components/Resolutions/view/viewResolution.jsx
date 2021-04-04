@@ -14,8 +14,10 @@ export default function (){
             let image = await firebase.storage().ref().child(sessionStorage.getItem('author')).child(posts[i].img).getDownloadURL();
                 let newPost = (
                     <div>
-                        {posts[i].post}
-                        <img src={image}></img>
+                        <div className = "PostBox">
+                        <p>{posts[i].post}</p>
+                        </div>
+                        <img src={image} className = "PostImage"></img>
                         {posts[i].timestamp}
                     </div>
                 )
