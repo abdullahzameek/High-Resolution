@@ -57,6 +57,7 @@ class ResolutionCard extends Component{
   }
 
   handlePostClick = () => {
+    
     this.setState({
       make_post_clicked : true 
     })
@@ -68,8 +69,8 @@ class ResolutionCard extends Component{
     if (this.state.card_clicked) {
 			return (<Redirect to={`/see`} />)
     }
-    if (this.make_post_clicked){
-      console.log("TEST")
+    if (this.state.make_post_clicked){
+      sessionStorage.setItem("makeFor", this.props.resContent);
       return (<Redirect to={`/post`}/>)
     }
     if (this.props.author == sessionStorage.getItem('displayName'))
@@ -98,7 +99,6 @@ class ResolutionCard extends Component{
 
       </Card>
     )
-    else
     return(
       <Card className={classes.root} variant="outlined">
         <CardContent>
