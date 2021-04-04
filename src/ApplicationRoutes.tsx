@@ -6,13 +6,16 @@ import { DashboardRoutes } from "./views/Dashboard";
 import Results from "./components/search/Results";
 import MakeResolution from './components/Resolutions/MakeResolution';
 import Resolution from "./components/Resolutions/Resolution";
+
 import EditProfile from "./components/Profile/EditProfile";
-import Discover from "./components/discover/Discover";
+
+import DiscoverWrapper from "./components/discover/DiscoverWrapper";
 
 const ApplicationRoutes = () => {
    return (
      <Router>
         <Switch>
+<<<<<<< HEAD
         <PrivateRoute exact path="/dashboard" component={DashboardRoutes}/>
         <Route exact path="/search" component={Results}/>
         <Route exact path="/createNew" component={MakeResolution}></Route>
@@ -21,6 +24,15 @@ const ApplicationRoutes = () => {
         
         <Route path="/auth" component={AuthRoutes} />
         <Redirect to="/auth" from= "/" />
+=======
+         <PrivateRoute exact path="/dashboard" component={DashboardRoutes}/>
+         <Route exact path="/search" component={Results}/>
+         <Route exact path="/createNew" component={MakeResolution}></Route>
+         <Route exact path='/editUser' component={EditProfile}/>
+         <Route exact path="/discover" component={DiscoverWrapper}/>
+         <Route path="/auth" component={AuthRoutes} />
+         <Redirect to="/auth" from= "/" />
+>>>>>>> 35295387db2eb030170627e7da84f743190f47fd
        </Switch>
        </Router>
   );
