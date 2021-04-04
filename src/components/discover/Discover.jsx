@@ -39,7 +39,7 @@ export default function Discover(){
             </div>
         )
     }
-
+    
     const getResCard = resCardObj => {
         return (
           <Grid item xs={12} sm={4}>

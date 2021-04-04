@@ -9,6 +9,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import CardActions from '@material-ui/core/CardActions';
 import Button from '@material-ui/core/Button';
 import { withStyles} from '@material-ui/core';
+import { SettingsBrightnessOutlined } from "@material-ui/icons";
 
 const useStyles = makeStyles({
     root: {
@@ -43,9 +44,10 @@ class ResolutionCard extends Component{
   }
 
   handleClick = () => {
-    this.setState({
-        card_clicked : true
-    })
+    console.log('clicked here');
+    sessionStorage.setItem("cardContent", [this.props.completion, this.props.resContent, this.props.category]);
+    sessionStorage.setItem('posts',JSON.stringify(this.props.posts))
+    console.log(JSON.parse(sessionStorage.getItem('posts')))
   }
 
 
